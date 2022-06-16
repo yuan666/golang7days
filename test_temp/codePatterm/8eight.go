@@ -14,6 +14,7 @@ channel
 ***/
 //echo() 函数，会把一个整数数组放到一个chanel中，并返回这个channel
 func echo(nums []int) <-chan int {
+	fmt.Println("echo enter")
 	out := make(chan int)
 	go func() {
 		for _, n := range nums {
@@ -90,11 +91,11 @@ func MakeRange(min, max int) []int {
 }
 
 func TestMakeRange() {
-	nums := MakeRange(1, 10000)
+	nums := MakeRange(1, 10000)  //生成随机数组
 	in := echo(nums)
 
 	const nProcess = 5
-	var chans [nProcess]<-chan int
+	var chans [nProcess] <-chan int
 	for i := range chans {
 		chans[i] = sum(prime(in))
 	}
@@ -114,6 +115,7 @@ func is_prime(value int) bool {
 }
 
 func prime(in <-chan int) <-chan int {
+	fmt.Println("echo enter")
 	out := make(chan int)
 	go func() {
 		for n := range in {
@@ -122,12 +124,14 @@ func prime(in <-chan int) <-chan int {
 			}
 		}
 		close(out)
+		fmt.Println("echo close")
 	}()
 
 	return out
 }
 
-func merge(cs []chan int) <-chan int {
+func merge(cs []<-chan int) <-chan int {
+	fmt.Println("merge enter")
 	var wg sync.WaitGroup
 	out := make(chan int)
 
@@ -138,12 +142,14 @@ func merge(cs []chan int) <-chan int {
 				out <- n
 			}
 			wg.Done()
+			fmt.Println("merge done")
 		}(c)
 	}
 
 	go func() {
 		wg.Wait()
 		close(out)
+		fmt.Println("merge close")
 	}()
 	return out
 }

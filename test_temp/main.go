@@ -26,7 +26,9 @@ func main() {
 		codePatterm.TestMap()
 	*/
 	//page 7
-	codePatterm.TestDecorateHello()
-	codePatterm.TestDecorateSum()
-	codePatterm.TesthelloWithServer()
+	//codePatterm.TestDecorateHello()
+	//codePatterm.TestDecorateSum()
+	//codePatterm.TesthelloWithServer()
+
+	codePatterm.TestMakeRange()
 }
