@@ -1,0 +1,1 @@
+void SayHelloGo(/*const*/ char *s);

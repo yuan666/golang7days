@@ -1,0 +1,1 @@
+void SayHelloCPP(const char *s);
