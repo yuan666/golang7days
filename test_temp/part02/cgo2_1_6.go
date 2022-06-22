@@ -7,7 +7,7 @@ import "C"
 import "fmt"
 
 func Cgo2_1_6()  {
-	C.SayHELLO(C.CString("hello world!\n"))
+	C.SayHELLO(C.CString("hello world!.....\n"))
 }
 
 //export SayHELLO

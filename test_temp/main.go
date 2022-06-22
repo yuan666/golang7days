@@ -1,34 +1,9 @@
 package main
 
-import "codePatterm"
+import "test_temp/part02"
 
-func main() {
-	//page one
-	//codePatterm.TestSlice()
-	//codePatterm.TestDeepEqual()
-	//codePatterm.TestStringable()
-
-	//page two
-	//codePatterm.TestFluentInterface()
-
-	//page three
-	//codePatterm.TestFuncOption()
-
-	//page four
-	//codePatterm.TestUndo()
-
-	//page five
-	/*
-		codePatterm.TestMap01()
-		codePatterm.TestReduce()
-		codePatterm.TestFilter()
-		codePatterm.TestEmployee()
-		codePatterm.TestMap()
-	*/
-	//page 7
-	//codePatterm.TestDecorateHello()
-	//codePatterm.TestDecorateSum()
-	//codePatterm.TesthelloWithServer()
-
-	codePatterm.TestMakeRange()
+func main()  {
+	part02.Cgo2_1_6()
 }
+
+
